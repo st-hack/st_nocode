@@ -3,7 +3,26 @@ import os
 import runpy
 import streamlit.components.v1 as components
 #st.set_page_config(layout="wide")
+class stwidget:
+  def __init__(self,kind,sidebar,name):
+    self.kind = kind
+    self.sidebar = sidebar
+    if name:
+      self.name = name
+    else:
+      self.name = None
+  def get_code(self):
+    if self.sidebar==True:
+      code = f"st.sidebar.{self.kind}"#('{self.name}')"
+    else:
+      code = f"st.{self.kind}"#('{self.name}')"
+    if self.name:
+      code = code + f"('{self.name}')"
+    else:
+      code = code + "()"
 
+
+    return code
 
 #st.title('Streamlit No Code app')
 

@@ -83,7 +83,7 @@ widgets = ['balloons','title','header','subheader','image','text','button','chec
 col1,col2 = st.columns([8,2])
 select_widget=col2.selectbox('select',widgets)
 
-sel_url='http://localhost:8501/Nocode/'#st.text_input('Enter url')
+sel_url='https://share.streamlit.io/st-hack/st_nocode/main/app.py/Nocode/'#st.text_input('Enter url')
 with col1:
   components.iframe(sel_url,height=600,scrolling=True)
 

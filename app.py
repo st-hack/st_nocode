@@ -3,6 +3,8 @@ import os
 import runpy
 import streamlit.components.v1 as components
 #st.set_page_config(layout="wide")
+
+
 class stwidget:
   def __init__(self,kind,sidebar,name):
     self.kind = kind
@@ -23,6 +25,52 @@ class stwidget:
 
 
     return code
+
+st.set_page_config(page_title="Streamlit App", page_icon="🤖",layout="wide")
+BACKGROUND_COLOR = 'white'
+COLOR = 'black'
+
+def set_page_container_style(
+        max_width: int = 2100, max_width_100_percent: bool = False,
+        padding_top: int = 0, padding_right: int = 1, padding_left: int = 1, padding_bottom: int = 10,
+        color: str = COLOR, background_color: str = BACKGROUND_COLOR,
+    ):
+        if max_width_100_percent:
+            max_width_str = f'max-width: 100%;'
+        else:
+            max_width_str = f'max-width: {max_width}px;'
+        st.markdown(
+            f'''
+            <style>
+                .reportview-container .sidebar-content {{
+                    padding-top: {padding_top}rem;
+                }}
+                .reportview-container .main .block-container {{
+                    {max_width_str}
+                    padding-top: {padding_top}rem;
+                    padding-right: {padding_right}rem;
+                    padding-left: {padding_left}rem;
+                    padding-bottom: {padding_bottom}rem;
+                }}
+                .reportview-container .main {{
+                    color: {color};
+                    background-color: {background_color};
+                }}
+            </style>
+            ''',
+            unsafe_allow_html=True,
+        )
+
+set_page_container_style()
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 #st.title('Streamlit No Code app')
 
@@ -117,3 +165,7 @@ with open('pages/02_code.py','w') as f:
 
 
 
+#st.write('You selected:', options)
+#code_string = '\n'.join(st.session_state.code_list)
+#with st.expander("See your code"):
+#    st.code(code_string, language='python')

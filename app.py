@@ -97,7 +97,7 @@ if 'st.balloons()' in st.session_state.code_list:
     st.session_state.code_list.remove('st.balloons()')
 
 #ask if we want to remove the last elemente in the list using a button
-remove_last = col2.button('remove last')
+remove_last = col2.button('Undo')
 if remove_last:
   st.session_state.code_list.pop()
 #with col2:

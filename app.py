@@ -39,9 +39,9 @@ widgets = ['balloons','title','header','subheader','image','text','button','chec
 col1,col2 = st.columns([8,2])
 select_widget=col2.selectbox('select',widgets)
 
-sel_url='https://share.streamlit.io/st-hack/st_nocode/main/app.py/Nocode/'#st.text_input('Enter url')
-with col1:
-  components.iframe(sel_url,height=600,scrolling=True)
+#sel_url='https://share.streamlit.io/st-hack/st_nocode/main/app.py/Nocode/'#st.text_input('Enter url')
+#with col1:
+#  components.iframe(sel_url,height=600,scrolling=True)
 
 
 if 'code_list' not in st.session_state:
@@ -110,6 +110,9 @@ with open('pages/01_Nocode.py','w') as f:
     f.write('import streamlit as st\n')
     for code in st.session_state.code_list:
         f.write(code+'\n')      
+
+with col1:
+    runpy.run_path('pages/01_Nocode.py')
 
 code_string = '\n'.join(st.session_state.code_list)
 #st.code(code_string)

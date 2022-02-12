@@ -107,7 +107,7 @@ if remove_last:
 #write code_list to a file with each line as a code snippet
 
 if not os.path.exists('pages_'):
-  os.makedirs('pages')
+  os.makedirs('pages_')
 
 with open('pages_/01_Nocode.py','w') as f:
     f.write('import streamlit as st\n')

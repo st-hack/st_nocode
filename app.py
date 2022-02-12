@@ -131,6 +131,5 @@ with open("pages_/01_Nocode.py", "rb") as file:
      btn = col2.download_button(
              label="Download code",
              data=file,
-             file_name="app.py",
-             #mime="image/png"
+             file_name="app.py"
            )

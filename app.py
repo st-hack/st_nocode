@@ -95,14 +95,17 @@ if 'st.balloons()' in st.session_state.code_list:
   if remove_balloons:
     st.session_state.code_list.remove('st.balloons()')
 
+#ask if we want to remove the last elemente in the list using a button
+remove_last = col2.button('remove last')
+if remove_last:
+  st.session_state.code_list.pop()
 #with col2:
 #    code_lines = st.multiselect(
 #     'your code',
 #     st.session_state.code_list,
 #     st.session_state.code_list)
 #write code_list to a file with each line as a code snippet
-cwd = os.getcwd()
-st.write(cwd)
+
 if not os.path.exists('pages'):
   os.makedirs('pages')
 

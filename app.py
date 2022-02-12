@@ -127,4 +127,10 @@ with open('pages_/02_code.py','w') as f:
   f.write(f'st.code(code,language="python")')
 
 
-st.download_button(label='Download file',pages_/02_code.py)
+with open("pages_/02_code.py", "rb") as file:
+     btn = st.download_button(
+             label="Download code",
+             data=file,
+             file_name="app.py",
+             #mime="image/png"
+           )

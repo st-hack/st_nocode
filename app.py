@@ -127,7 +127,7 @@ with open('pages_/02_code.py','w') as f:
   f.write(f'st.code(code,language="python")')
 
 
-with open("pages_/01_code.py", "rb") as file:
+with open("pages_/01_Nocode.py", "rb") as file:
      btn = st.download_button(
              label="Download code",
              data=file,

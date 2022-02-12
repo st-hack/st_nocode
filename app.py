@@ -145,6 +145,8 @@ if 'st.balloons()' in st.session_state.code_list:
 #     st.session_state.code_list,
 #     st.session_state.code_list)
 #write code_list to a file with each line as a code snippet
+cwd = os.getcwd()
+st.write(cwd)
 with open('pages/01_Nocode.py','w') as f:
     f.write('import streamlit as st\n')
     for code in st.session_state.code_list:

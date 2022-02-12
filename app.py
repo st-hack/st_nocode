@@ -149,7 +149,7 @@ cwd = os.getcwd()
 st.write(cwd)
 if not os.path.exists('pages'):
   os.makedirs('pages')
-
+st.write(os.system('ls'))
 with open('pages/01_Nocode.py','w') as f:
     f.write('import streamlit as st\n')
     for code in st.session_state.code_list:

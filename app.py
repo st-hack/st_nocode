@@ -61,27 +61,27 @@ with col2.form('form'):
 
 # ask for columns with a checkbox
 #cols = st.beta_columns([6,2])
-ask_cols = col2.checkbox('columns')
-if ask_cols:
+#ask_cols = col2.checkbox('columns')
+#if ask_cols:
   #ask for the number of columns
-  cols = col2.number_input('columns',2,4)
-  if cols:
-    if cols==2:
-      st.session_state.code_list.append('col1,col2 = st.columns(2)')
-      st.session_state.code_list.append('col1.markdown("col1")')
-      st.session_state.code_list.append('col2.markdown("col2")')
-    elif cols==3:
-      st.session_state.code_list.append('col1,col2,col3 = st.columns(3)')
-      st.session_state.code_list.append('col1.markdown("col1")')
-      st.session_state.code_list.append('col2.markdown("col2")')
-      st.session_state.code_list.append('col3.markdown("col3")')
+#  cols = col2.number_input('columns',2,4)
+#  if cols:
+#    if cols==2:
+#      st.session_state.code_list.append('col1,col2 = st.columns(2)')
+#      st.session_state.code_list.append('col1.markdown("col1")')
+#      st.session_state.code_list.append('col2.markdown("col2")')
+#    elif cols==3:
+#      st.session_state.code_list.append('col1,col2,col3 = st.columns(3)')
+#      st.session_state.code_list.append('col1.markdown("col1")')
+#      st.session_state.code_list.append('col2.markdown("col2")')
+#      st.session_state.code_list.append('col3.markdown("col3")')
 
-    elif cols==4:
-      st.session_state.code_list.append('col1,col2,col3,col4 = st.columns(4)')
-      st.session_state.code_list.append('col1.markdown("col1")')
-      st.session_state.code_list.append('col2.markdown("col2")')
-      st.session_state.code_list.append('col3.markdown("col3")')
-      st.session_state.code_list.append('col4.markdown("col4")')
+#    elif cols==4:
+#      st.session_state.code_list.append('col1,col2,col3,col4 = st.columns(4)')
+#      st.session_state.code_list.append('col1.markdown("col1")')
+#      st.session_state.code_list.append('col2.markdown("col2")')
+#      st.session_state.code_list.append('col3.markdown("col3")')
+#      st.session_state.code_list.append('col4.markdown("col4")')
 
       
 

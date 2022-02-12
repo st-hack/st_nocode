@@ -128,7 +128,7 @@ with open('pages_/02_code.py','w') as f:
 
 
 with open("pages_/01_Nocode.py", "rb") as file:
-     btn = st.download_button(
+     btn = col2.download_button(
              label="Download code",
              data=file,
              file_name="app.py",

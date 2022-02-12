@@ -125,3 +125,6 @@ with open('pages_/02_code.py','w') as f:
   f.write('with open("pages_/01_Nocode.py","r") as f:\n')
   f.write('  code = f.read()\n')
   f.write(f'st.code(code,language="python")')
+
+
+st.download_button(label='Download file','pages_/02_code.py')

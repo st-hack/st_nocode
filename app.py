@@ -90,6 +90,7 @@ with col2.form('form'):
 
 
 if 'st.balloons()' in st.session_state.code_list:
+  st.write('balloons')
   #ask if we want to remove the balloons with a checkbox
   remove_balloons = col2.checkbox('remove balloons')
   if remove_balloons:

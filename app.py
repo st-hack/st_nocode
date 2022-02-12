@@ -106,21 +106,21 @@ if remove_last:
 #     st.session_state.code_list)
 #write code_list to a file with each line as a code snippet
 
-if not os.path.exists('pages'):
+if not os.path.exists('pages_'):
   os.makedirs('pages')
 
-with open('pages/01_Nocode.py','w') as f:
+with open('pages_/01_Nocode.py','w') as f:
     f.write('import streamlit as st\n')
     for code in st.session_state.code_list:
         f.write(code+'\n')      
 
 with col1:
-    runpy.run_path('pages/01_Nocode.py')
+    runpy.run_path('pages_/01_Nocode.py')
 
 code_string = '\n'.join(st.session_state.code_list)
 #st.code(code_string)
-with open('pages/02_code.py','w') as f:
+with open('pages_/02_code.py','w') as f:
   f.write('import streamlit as st\n')
-  f.write('with open("pages/01_Nocode.py","r") as f:\n')
+  f.write('with open("pages_/01_Nocode.py","r") as f:\n')
   f.write('  code = f.read()\n')
   f.write(f'st.code(code,language="python")')
